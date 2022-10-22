@@ -1,8 +1,8 @@
 const canvas = document.querySelector('canvas')
-const c = canvas.getContext('2d');
+const c = canvas.getContext('2d')
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.width = innerWidth
+canvas.height = innerHeight
 
 const gravity = 1.5
 
@@ -16,13 +16,14 @@ class Player {
       x: 0,
       y: 0
     }
+
     this.width = 30
     this.height = 30
   }
 
   draw() {
     c.fillStyle = 'red'
-    c.fillRect(this.position.x, this.position.y, this.width, this.height);
+    c.fillRect(this.position.x, this.position.y, this.width, this.height)
   }
 
   update() {
@@ -39,7 +40,7 @@ class Player {
   }
 }
 
-const player = new Player();
+const player = new Player()
 const keys = {
   right: {
     pressed: false
@@ -50,9 +51,9 @@ const keys = {
 }
 
 function animate() {
-  requestAnimationFrame(animate);
-  c.clearRect(0, 0, canvas.width, canvas.height);
-  player.update();
+  requestAnimationFrame(animate)
+  c.clearRect(0, 0, canvas.width, canvas.height)
+  player.update()
 
   if (keys.right.pressed) {
     player.velocity.x = 5
@@ -69,33 +70,33 @@ animate()
 
 addEventListener('keydown', ({ keyCode }) => {
   switch (keyCode) {
-    case 65:
+    case 65: // left
       keys.left.pressed = true
       break
-    case 83:
+    case 83: // down
       break
-    case 68:
+    case 68: // right
+      console.log('right')
       keys.right.pressed = true
       break
-    case 87:
+    case 87: // up
       player.velocity.y -= 20
       break
   }
-});
+})
 
 addEventListener('keyup', ({ keyCode }) => {
   switch (keyCode) {
-    case 65:
+    case 65: // left
       keys.left.pressed = false
       break
-    case 83:
+    case 83: // down
       break
-    case 68:
-
-      keys.left.pressed = false
+    case 68: // right
+      keys.right.pressed = false
       break
-    case 87:
+    case 87: // up
       player.velocity.y -= 20
       break
   }
-});
+})
