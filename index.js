@@ -42,7 +42,6 @@ const player = new Player({
       loop: false,
       imageSrc: 'img/king/enterDoor.png',
       onComplete: () => {
-        console.log('completed animation')
         gsap.to(overlay, {
           opacity: 1,
           onComplete: () => {
@@ -147,7 +146,7 @@ let levels = {
       doors = [
         new Sprite({
           position: {
-            x: 176.0,
+            x: 176,
             y: 335,
           },
           imageSrc: 'img/doorOpen.png',
@@ -181,9 +180,6 @@ function animate() {
   window.requestAnimationFrame(animate)
 
   background.draw()
-  // collisionBlocks.forEach((collisionBlock) => {
-  //   collisionBlock.draw()
-  // })
 
   doors.forEach((door) => {
     door.draw()
