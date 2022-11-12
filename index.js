@@ -9,38 +9,38 @@ let collisionBlocks
 let background
 let doors
 const player = new Player({
-  imageSrc: './img/king/idle.png',
+  imageSrc: 'img/king/idle.png',
   frameRate: 11,
   animations: {
     idleRight: {
       frameRate: 11,
       frameBuffer: 2,
       loop: true,
-      imageSrc: './img/king/idle.png',
+      imageSrc: 'img/king/idle.png',
     },
     idleLeft: {
       frameRate: 11,
       frameBuffer: 2,
       loop: true,
-      imageSrc: './img/king/idleLeft.png',
+      imageSrc: 'img/king/idleLeft.png',
     },
     runRight: {
       frameRate: 8,
       frameBuffer: 4,
       loop: true,
-      imageSrc: './img/king/runRight.png',
+      imageSrc: 'img/king/runRight.png',
     },
     runLeft: {
       frameRate: 8,
       frameBuffer: 4,
       loop: true,
-      imageSrc: './img/king/runLeft.png',
+      imageSrc: 'img/king/runLeft.png',
     },
     enterDoor: {
       frameRate: 8,
       frameBuffer: 4,
       loop: false,
-      imageSrc: './img/king/enterDoor.png',
+      imageSrc: 'img/king/enterDoor.png',
       onComplete: () => {
         console.log('completed animation')
         gsap.to(overlay, {
@@ -62,7 +62,7 @@ const player = new Player({
   },
 })
 
-let level = 1
+let level = 3
 let levels = {
   1: {
     init: () => {
@@ -76,7 +76,7 @@ let levels = {
           x: 0,
           y: 0,
         },
-        imageSrc: './img/backgroundLevel1.png',
+        imageSrc: 'img/backgroundLevel1.png',
       })
 
       doors = [
@@ -85,7 +85,7 @@ let levels = {
             x: 767,
             y: 270,
           },
-          imageSrc: './img/doorOpen.png',
+          imageSrc: 'img/doorOpen.png',
           frameRate: 5,
           frameBuffer: 5,
           loop: false,
@@ -109,7 +109,7 @@ let levels = {
           x: 0,
           y: 0,
         },
-        imageSrc: './img/backgroundLevel2.png',
+        imageSrc: 'img/backgroundLevel2.png',
       })
 
       doors = [
@@ -118,7 +118,7 @@ let levels = {
             x: 772.0,
             y: 336,
           },
-          imageSrc: './img/doorOpen.png',
+          imageSrc: 'img/doorOpen.png',
           frameRate: 5,
           frameBuffer: 5,
           loop: false,
@@ -141,7 +141,7 @@ let levels = {
           x: 0,
           y: 0,
         },
-        imageSrc: './img/backgroundLevel3.png',
+        imageSrc: 'img/backgroundLevel3.png',
       })
 
       doors = [
@@ -150,7 +150,7 @@ let levels = {
             x: 176.0,
             y: 335,
           },
-          imageSrc: './img/doorOpen.png',
+          imageSrc: 'img/doorOpen.png',
           frameRate: 5,
           frameBuffer: 5,
           loop: false,
